@@ -1,8 +1,7 @@
-/* eslint-disable no-undef */
-// See https://tailwindcss.com/docs/configuration for details
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/**/*.{js,jsx,ts,tsx,md,mdx}"],
-  darkMode: 'class',
+  darkMode: 'class', // or 'media' or 'class'
+  mode: 'jit',
   theme: {
     extend: {
       typography: {
@@ -31,7 +30,8 @@ module.exports = {
     },
   },
   important: true,
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require('tailwindcss-textshadow')],
-};
-
+}

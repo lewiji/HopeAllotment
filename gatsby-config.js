@@ -77,18 +77,6 @@ module.exports = {
         icon: `src/images/bigleaf.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          require(`@tailwindcss/jit`)(tailwindConfig),
-          require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production`
-            ? [require(`cssnano`)]
-            : []),
-        ],
-      },
-    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
   ],

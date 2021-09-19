@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import {motion} from "framer-motion";
 import {Helmet} from "react-helmet";
 import Header from "../components/header";
 import Transition from "../components/transition";
@@ -13,7 +12,7 @@ function Layout({children, location}) {
                 <meta charSet={"utf-8"}/>
                 <title>HOPE Community Allotment, Sheffield</title>
                 <meta name={"description"}
-                      content={"Home of the HOPE community allotment project, Firth Park, Sheffield, UK - community gardening and more!"}/>
+                      content={"Home of the HOPE community allotment project, Firth Park, Sheffield, UK - community allotment gardening, make friends, learn new skills!"}/>
                 <script type="application/ld+json">
                     {`
                         {

@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 export default function Footer(props) {
     return <footer className="footer_pattern">
         <nav
-            className="flex justify-center items-center text-center max-w-4xl p-1 mx-auto text-xs tracking-tight leading-tight md:leading-normal md:text-sm md:tracking-normal md:p-3 text-green-200 bg-blue-700  rounded-lg my-1 md:my-2 bg-opacity-80">
-            <p className="w-7 h-7 mr-1 ml-1 justify-center items-center font-green-500 hover:cursor-pointer filter brightness-50">
+            className="flex flex-wrap justify-evenly items-center text-center max-w-4xl p-1 mx-auto text-xs tracking-tight leading-tight md:leading-normal md:text-sm md:tracking-normal md:p-3 text-green-200 bg-blue-700  rounded-lg my-1 md:my-2 bg-opacity-80">
+            <p className="w-7 h-7 mr-1 ml-1 justify-center items-center font-green-500 hover:cursor-pointer ">
                 <a target={"blank"} href={"https://github.com/lewiji/HopeAllotment"}>
               <span role="img" aria-label="Check out the code on Github">
                <svg xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export default function Footer(props) {
               </span>
                 </a>
             </p>
-            <p className="flex-1 text-center">
+            <p className=" text-center">
                 <a
                     href="https://www.sagesheffield.org.uk/"
                     rel="noreferrer"
@@ -35,10 +35,10 @@ export default function Footer(props) {
                         <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
                         <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
                     </svg>
-                    <span className="leading-tight text-xs md:leading-relaxed">Support Arts Gardening<br/> Education (SAGE)</span>
+                    <span className="leading-tight text-xs md:leading-relaxed">SAGE</span>
                 </a>
             </p>
-            <p className="flex-1 text-center">
+            <p className=" text-center">
                 <a
                     href="https://www.gca.burngreave.net/"
                     rel="noreferrer"
@@ -57,7 +57,7 @@ export default function Footer(props) {
                     <span className="leading-tight  md:leading-relaxed text-xs">Green City<br/> Action</span>
                 </a>
             </p>
-            <p className="flex-1 text-center">
+            <p className="text-center">
                 <a
                     href="https://growsheffield.com/"
                     rel="noreferrer"
@@ -76,6 +76,7 @@ export default function Footer(props) {
                     <span className="leading-tight  md:leading-relaxed  text-xs">Grow <br/> Sheffield</span>
                 </a>
             </p>
+            <p className={"pt-2 sm:pt-0 text-center text-xs break-words max-w-xs"}>Trade Base Trust is a registered charity, with Charity Registration number 1159828.</p>
             <p className="text-lg leading-relaxed text-right justify-center items-end font-green-500 hover:cursor-pointer">
             <span role="img" aria-label="Green Heart (scroll to top)">
               <motion.svg initial={{scale: 0.8, opacity: 0, pathLength: 0}} animate={{scale: 1, opacity: 1, pathLength: 1}}
