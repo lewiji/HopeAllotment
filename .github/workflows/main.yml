@@ -70,3 +70,15 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
           AWS_REGION: 'eu-west-2'
           SOURCE_DIR: 'public'
+          
+      - name: Invalidate Cloudfront
+        # You may pin to the exact commit or the version.
+        # uses: chetan/invalidate-cloudfront-action@082f03d9029a68a4c73c99175c83b7a0044d9d69
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+          PATHS: "/*"
+          AWS_REGION: eu-west-2
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+          
