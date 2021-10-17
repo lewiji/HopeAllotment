@@ -20,7 +20,7 @@ function PrismicPage({data}) {
       />
       <section className="text-center md-page mx-auto">
         <div className={"page-title relative text-center flex items-center justify-center bg-yellow-600 bg-opacity-75 md:rounded-lg md:w-8/12 mx-auto"} >
-          <Parallax strength={180}
+          <Parallax strength={96}
                     bgImageAlt={document?.page_image?.alt}
                     bgImageSize={document?.page_image?.gatsbyImageData?.images?.fallback?.sizes}
                     bgImage={document?.page_image?.gatsbyImageData?.images?.fallback?.src}
@@ -45,7 +45,7 @@ function PrismicPage({data}) {
         </div>
 
         {isContact && <ContactForm/>}
-        {isMap && <div className={" w-11/12 mx-auto"}><MapContainer  selectedPlace={{ lat: 53.41561155973524, lng: -1.442938707955667 }} /></div>}
+        {isMap && <div className={"w-11/12 mx-auto"}><MapContainer  selectedPlace={{ lat: 53.41561155973524, lng: -1.442938707955667 }} /></div>}
       </section>
     </div>
   );

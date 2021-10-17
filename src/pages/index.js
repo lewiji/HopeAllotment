@@ -16,7 +16,7 @@ function IndexPage({data}) {
       />
       <section className="text-center md-page mx-auto">
         <div className={"page-title relative text-center flex items-center justify-center"} >
-          <Parallax strength={400}
+          <Parallax strength={200}
                     bgImageSize={document?.page_image?.gatsbyImageData?.images?.fallback?.sizes}
                     bgImage={document?.page_image?.gatsbyImageData?.images?.fallback?.src}
                     bgImageSrcSet={document?.page_image?.gatsbyImageData?.images?.fallback?.srcSet}
