@@ -6,6 +6,7 @@ import { CustomLink } from "../components/custom_link";
 import { Parallax } from "react-parallax";
 import ContactForm from "../components/contact_form";
 import { MapContainer } from "../components";
+import VolunteersNeeded from "../components/volunteers_needed";
 
 function PrismicPage({data}) {
   const document = data?.prismicPage?.data;
@@ -39,6 +40,8 @@ function PrismicPage({data}) {
         </h4>
 
         <hr className={"mb-6 w-1/4 mx-auto"}/>
+
+        <VolunteersNeeded/>
 
         <div className={"prose mx-auto text-justify ml-7 md:ml-20 mb-8"}>
           <RichText render={document?.body?.raw} serializeHyperlink={CustomLink} />

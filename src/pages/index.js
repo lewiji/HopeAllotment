@@ -4,6 +4,8 @@ import { RichText } from 'prismic-reactjs';
 import SEO from "../components/seo";
 import { CustomLink } from "../components/custom_link";
 import { Parallax } from "react-parallax";
+import CovidInfo from "../components/covid_info";
+import VolunteersNeeded from "../components/volunteers_needed";
 
 function IndexPage({data}) {
   const document = data?.allPrismicPage?.nodes[0]?.data;
@@ -36,9 +38,14 @@ function IndexPage({data}) {
 
         <hr className={"mb-6 w-1/4 mx-auto"}/>
 
+        <VolunteersNeeded/>
+
+
         <div className={"prose mx-auto text-justify ml-7 md:ml-20 mb-8"}>
           <RichText render={document?.body?.raw} serializeHyperlink={CustomLink} />
         </div>
+
+        <CovidInfo/>
       </section>
     </div>
   );

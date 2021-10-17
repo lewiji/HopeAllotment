@@ -65,7 +65,7 @@ function ContactForm() {
   };
 
   return (
-    <div>
+    <div className={"w-11/12 mx-auto mb-8"}>
         <div className=" text-green-700 font-semibold text-2xl mb-3">{success}</div>
         <div className="text-red-600 font-semibold mb-3">{error}</div>
         {!success && <form className="mx-auto md:w-1/2 mt-2" method="post" action={functionURL}>

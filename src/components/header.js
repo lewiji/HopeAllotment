@@ -80,6 +80,7 @@ function Header() {
                 <Link to={link.route}>
                     <motion.div onClick={() => {
                         setTimeout(() => {
+                            toggleExpansion(false)
                             console.log(document?.getElementById("md-page"));
                             document?.getElementById("main")?.scrollIntoView({behavior: "smooth", inline: "end", block: "start"});
                         }, 200);
