@@ -31,7 +31,7 @@ function Layout({children, location}) {
             </Helmet>
             <Header/>
 
-            <main id={"main"} className="flex-1 w-full max-w-4xl px-4 py-4 mx-auto md:px-4 md:py-8">
+            <main id={"main"} className="flex-1 w-full max-w-4xl mx-auto md:px-4 md:py-4">
                 <Transition location={location}>{children}</Transition>
             </main>
 

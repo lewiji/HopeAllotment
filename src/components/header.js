@@ -10,7 +10,7 @@ function Logo(props) {
                    className="flex items-center text-white no-underline mb-2">
             <motion.img variants={leafVariants} whileHover={leafVariants.whileHover} src={BigLeaf} alt="" className="mr-2 h-16"/>
             <motion.span className="text-xl font-bold tracking-tight">
-                {props.site.siteMetadata.title}
+                HOPE Community Allotment
             </motion.span>
         </motion.div>
     </Link>;
@@ -57,43 +57,13 @@ function FacebookLink() {
 }
 
 function Navigation(props) {
+
+
     return <motion.nav layout variants={menuVariants} id={"menu"} animate={"animate"} initial={"initial"} exit={"exit"}
                        className={`${props.expanded ? `block` : `hidden`} text-center md:block text-shadow-sm w-full md:w-auto mt-0 lg:mt-1`}
     >
-        {[
-            {
-                route: `/`,
-                title: `Home`,
-            },
-            {
-                route: `/about_us`,
-                title: `About Us`,
-            },
-            {
-                route: `/our_history`,
-                title: `History`,
-            },
-            {
-                route: `/what_we_do`,
-                title: "What We Do"
-            },
-            {
-                route: `/gardening_sessions_and_activities`,
-                title: `Gardening & Activities`,
-            },
-            {
-                route: `/where_to_find_us`,
-                title: `Where To Find Us`,
-            },
-            {
-                route: `/tributes`,
-                title: `Tributes`,
-            },
-            {
-                route: `/contact_us`,
-                title: `Contact`,
-            },
-        ].map(props.callbackfn)}
+        {/* Display all prismic Pages as menu items */}
+        {props.data?.map((v) => {return {route: v.url, title:v.data.short_title.text ? v.data.short_title.text : v.data.title.text}}).map(props.callbackfn)}
 
         <FacebookLink/>
     </motion.nav>;
@@ -101,15 +71,6 @@ function Navigation(props) {
 
 function Header() {
     const [isExpanded, toggleExpansion] = useState(false);
-    const {site} = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `);
 
     const renderLink = useCallback((link, index) => {
         return(
@@ -130,17 +91,36 @@ function Header() {
             </motion.div>);
     },  [menuItemVariants]);
 
+    const data = useStaticQuery(graphql`
+        query PageList {
+            allPrismicPage(sort: {fields: data___menu_order, order: ASC}) {
+                nodes {
+                    uid
+                    data {
+                        title {
+                            text
+                        }
+                        short_title {
+                            text
+                        }
+                    }
+                    url
+                }
+            }
+        }
+    `);
+
 
     return (
         <header className="header_pattern">
             <AnimatePresence>
                 <div className="rounded-xl flex flex-wrap items-center justify-evenly max-w-6xl p-1 mx-auto my-2
                   md:p-2 text-shadow-lg hover:text-shadow-xl">
-                    <Logo site={site}/>
+                    <Logo />
 
                     <ExpandButton onClick={() => toggleExpansion(!isExpanded)}/>
 
-                    <Navigation expanded={isExpanded} callbackfn={renderLink}/>
+                    <Navigation data={data?.allPrismicPage?.nodes} expanded={isExpanded} callbackfn={renderLink}/>
                 </div>
             </AnimatePresence>
         </header>

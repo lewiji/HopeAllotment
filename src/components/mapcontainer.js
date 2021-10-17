@@ -2,7 +2,7 @@ import React from "react";
 
 const LocationMap = ({ selectedPlace, ...extraProps }) => {
   return (
-    <div  className={"rounded shadow-sm border-4 border border-indigo-800  overflow-hidden w-11/12 h-96"}>
+    <div  className={"rounded shadow-sm border-4 border border-indigo-800  overflow-hidden w-11/12 mx-auto h-96 mb-8"}>
         <div className="mapouter  w-full h-full h-96">
             <div>
                 <iframe id="gmap_canvas"  style={{overflow:"hidden", background:"none, !important"}}
