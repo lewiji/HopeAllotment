@@ -31,20 +31,16 @@ jobs:
         with:     
           node-version: 16    
 
-      # Runs a single command using the runners shell
-      - name: Install
-        # You may pin to the exact commit or the version.
-        # uses: CultureHQ/actions-yarn@661c6f3a66041c2432bcfb78096b9207304614c8
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          args: install
+      - name: Install Yarn
+        run: npm install -g yarn
+        
+      - name: Install dependencies
+        run: yarn install
           
-      - name: Build
+      - name: Build web bundle
         # You may pin to the exact commit or the version.
         # uses: CultureHQ/actions-yarn@661c6f3a66041c2432bcfb78096b9207304614c8
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          args: build
+        run: yarn build
           
       - name: S3 Sync
         # You may pin to the exact commit or the version.
@@ -56,5 +52,5 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
-          AWS_REGION: 'eu-west-2'   # optional: defaults to us-east-1
-          SOURCE_DIR: 'public'      # optional: defaults to entire repository
+          AWS_REGION: 'eu-west-2'
+          SOURCE_DIR: 'public'
