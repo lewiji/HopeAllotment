@@ -29,7 +29,23 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.1
         with:     
-          node-version: 16    
+          node-version: 16
+          
+      - name: Create .env file
+        # You may pin to the exact commit or the version.
+        # uses: SpicyPizza/create-envfile@8b294d5418a318a60b171c77f0f514c356feec37
+        uses: SpicyPizza/create-envfile@v1.1
+        with:
+          file_name: .env.production
+          directory: 'public'
+          envkey_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          envkey_AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          envkey_AWS_SECRET: ${{ secrets.AWS_SECRET }}
+          envkey_GATSBY_CONTACT_API_LINK: ${{ secrets.GATSBY_CONTACT_API_LINK }}
+          envkey_GATSBY_CONTACT_EMAIL: ${{ secrets.GATSBY_CONTACT_EMAIL }}
+          envkey_GATSBY_PRISMIC_REPO_NAME: ${{ secrets.GATSBY_PRISMIC_REPO_NAME }}
+          envkey_PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
+          envkey_PRISMIC_CUSTOM_TYPES_API_TOKEN: ${{ secrets.PRISMIC_CUSTOM_TYPES_API_TOKEN }}
 
       - name: Install Yarn
         run: npm install -g yarn
