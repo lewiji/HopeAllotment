@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SEO from "../components/seo";
+import { StaticImage } from "gatsby-plugin-image";
 
 function ContactForm() {
   const functionURL = process.env.GATSBY_CONTACT_API_LINK;
@@ -66,6 +66,19 @@ function ContactForm() {
 
   return (
     <div className={"w-11/12 mx-auto mb-8"}>
+      <hr className={"mt-5"}/>
+        <div className="font-semibold text-xl mb-3 flex justify-center items-center">
+          <p className={"flex flex-row justify-center items-center"}>
+            <span>
+              Use the form below, or&nbsp;
+              <a href={"https://m.me/tcvallotment"} target={"_blank"} rel={"noopener noreferrer"} className={"text-blue-600 hover:text-blue-400 flex justify-center items-center font-bold"}> message us on Facebook
+                <StaticImage className={"ml-2"} src={"../images/icons8-facebook-messenger.svg"} alt={"Button to message us on Facebook"} height={38} width={38}/>
+              </a>
+            </span>
+          </p>
+        </div>
+
+      <hr className={"mb-8"}/>
         <div className=" text-green-700 font-semibold text-2xl mb-3">{success}</div>
         <div className="text-red-600 font-semibold mb-3">{error}</div>
         {!success && <form className="mx-auto md:w-1/2 mt-2" method="post" action={functionURL}>
@@ -117,7 +130,7 @@ function ContactForm() {
           <input
             className={`w-full mb-6 form-input ${submitting ? "bg-gray-300 opacity-50" : ""}`}
             id="phone"
-            placeholder="Your Phone Number"
+            placeholder="Your Phone Number (optional)"
             type="text"
             disabled={submitting}
             onChange={(e) => {

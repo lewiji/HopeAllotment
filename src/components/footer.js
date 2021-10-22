@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { StaticImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
 
 export default function Footer(props) {
   return <footer className="footer_pattern">

@@ -43,7 +43,7 @@ function PrismicPage({data}) {
 
         <VolunteersNeeded/>
 
-        <div className={"prose mx-auto text-justify mx-7 sm:mx-16 md:mx-20 mb-8 flex flex-col items-center justify-center"}>
+        <div className={`prose mx-auto text-justify mx-7 sm:mx-16 md:mx-20 ${(isContact || isMap) ? "mb-1" : "mb-8"} flex flex-col items-center justify-center`}>
           <RichText render={document?.body?.raw} serializeHyperlink={CustomLink} />
         </div>
 
