@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 
 const VolunteersNeeded = () => {
   return(
-  <div className="bg-yellow-100 rounded text-yellow-900 px-4 py-3 pt-1 no-underline prose-yellow w-11/12 mx-auto" role="alert">
+  <div className="bg-yellow-100 rounded text-yellow-900 px-4 py-3 pt-1 no-underline prose prose-yellow w-11/12 mx-auto" role="alert">
     <Link to={"/contact"}>
       <div className="flex items-center no-underline">
         <div>
@@ -14,7 +14,7 @@ const VolunteersNeeded = () => {
           </svg>
         </div>
         <div>
-          <p className="text-sm text-yellow-800">Volunteers are urgently needed! Please get in touch and tell your friends. There is plenty of work to do and lots of produce to collect.</p>
+          <p className="text-sm text-yellow-800">Volunteers are urgently needed! Please get in touch and tell your friends. There is plenty to do and lots of produce to collect.</p>
         </div>
       </div>
     </Link>

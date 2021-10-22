@@ -18,6 +18,9 @@ module.exports = {
             blockquote: {
               quotes: "none",
               fontSize: "1.68em",
+            },
+            p: {
+              lineHeight: "1.7"
             }
           }
         }
