@@ -19,17 +19,17 @@ function PrismicPage({data}) {
         keywords={[`hope`, `community`, `allotment`, `volunteers`]}
         title={document?.title?.text}
       />
-      <section className="text-center md-page mx-auto">
+      <section className="text-center md-page mx-auto container">
         <div className={"page-title relative text-center flex items-center justify-center bg-yellow-600 bg-opacity-75 md:rounded-lg md:w-8/12 mx-auto"} >
-          <Parallax strength={96}
+          <Parallax strength={108}
                     bgImageAlt={document?.page_image?.alt}
                     bgImageSize={document?.page_image?.gatsbyImageData?.images?.fallback?.sizes}
                     bgImage={document?.page_image?.gatsbyImageData?.images?.fallback?.src}
                     bgImageSrcSet={document?.page_image?.gatsbyImageData?.images?.fallback?.srcSet}
                     bgImageStyle={{
-                      filter: "brightness(0.9)"
+                      filter: "brightness(0.88)"
                     }}
-                    className={"gatsby-resp-image-image w-full h-32 xs:h-36 sm:h-52 flex justify-center items-center"}>
+                    className={"gatsby-resp-image-image w-full h-52 xs:h-44 sm:h-52 flex justify-center items-center"}>
             <h1 className="w-full inline-block font-semibold md:font-bold heading_pattern flex justify-center items-center">
               {document?.title?.text}
             </h1>
@@ -43,7 +43,7 @@ function PrismicPage({data}) {
 
         <VolunteersNeeded/>
 
-        <div className={"prose mx-auto text-justify ml-7 md:ml-20 mb-8 flex flex-col items-center justify-center"}>
+        <div className={"prose mx-auto text-justify mx-7 sm:mx-16 md:mx-20 mb-8 flex flex-col items-center justify-center"}>
           <RichText render={document?.body?.raw} serializeHyperlink={CustomLink} />
         </div>
 

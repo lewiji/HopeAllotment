@@ -75,15 +75,19 @@ function Header() {
     const renderLink = useCallback((link, index) => {
         return(
             <motion.div custom={index}
-                           className="block text-shadow-xl font-semibold mt-4 text-white md:inline-block w-36 md:w-auto mx-auto md:mt-0 md:ml-6"
-                           key={link.title} variants={menuItemVariants} animate={"animate"} initial={"initial"} whileHover={"whileHover"}>
+                   className="block text-shadow-xl font-semibold mt-4 text-white md:inline-block w-36 md:w-auto
+                              mx-auto md:mt-0 md:ml-6"
+                   key={link.title} variants={menuItemVariants} animate={"animate"} initial={"initial"}
+                   whileHover={"whileHover"}>
                 <Link to={link.route}>
                     <motion.div onClick={() => {
                         setTimeout(() => {
                             toggleExpansion(false)
                             console.log(document?.getElementById("md-page"));
-                            document?.getElementById("main")?.scrollIntoView({behavior: "smooth", inline: "end", block: "start"});
-                        }, 200);
+                            document?.getElementById("main")?.scrollIntoView({
+                                behavior: "smooth", inline: "end", block: "start"
+                            });
+                        }, 64);
                     }}>
                         <span>{link.title}</span>
                         <motion.hr variants={underlineVariants}/>
