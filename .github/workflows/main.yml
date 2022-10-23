@@ -59,6 +59,15 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: CultureHQ/actions-yarn@661c6f3a66041c2432bcfb78096b9207304614c8
         run: yarn build
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          # Artifact name
+          name: artifact
+          # A file, directory or wildcard pattern that describes what to upload
+          path: ./*
+          # The desired behavior if no files are found using the provided path.
           
       - name: S3 Sync
         # You may pin to the exact commit or the version.
