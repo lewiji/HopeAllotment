@@ -91,7 +91,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`, 
-    `gatsby-plugin-meta-redirect`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-client-side-redirect`,
   ],
 };
