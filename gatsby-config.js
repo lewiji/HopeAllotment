@@ -39,7 +39,8 @@ module.exports = {
           },
         ],
       },
-    },
+    }, 
+    `gatsby-plugin-client-side-redirect`,
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
@@ -92,6 +93,5 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-client-side-redirect`,
   ],
 };
